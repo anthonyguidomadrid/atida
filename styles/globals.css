@@ -1,0 +1,30 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+a {
+  color: #ff775c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #ff775c;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

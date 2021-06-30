@@ -1,0 +1,13 @@
+.footer div{
+display: flex;
+justify-content: center;
+}
+
+.footer img {
+    width: 200px;
+}
+
+.footer p {
+    margin-top: 25px;
+    text-align: center;
+}

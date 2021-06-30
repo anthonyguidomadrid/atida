@@ -1,0 +1,15 @@
+.menu img {
+    width: 100px;
+    height: auto;
+}
+
+.menu a {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 15px;
+}
+
+.menu {
+    padding: 0 25px;
+    margin-bottom: 25px;
+}
