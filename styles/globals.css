@@ -22,6 +22,19 @@ button {
   border: 1px;
 }
 
+.btn-dark {
+  background-color: #ff775c;
+  border: 0;
+}
+
+.btn-dark:hover {
+  background-color: #ff775c;
+}
+
+.flex-display {
+  display: flex
+}
+
 
 /* SPINNER */
 .spinner {

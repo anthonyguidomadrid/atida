@@ -7,7 +7,9 @@ class ProductsService {
         })
     }
     getAllProducts = () => this.app.get('/products.json')
-    getOneProduct = productId => this.app.get(`products/${productId}.json`)
+    getOneProduct = productId => this.app.get(`/products/${productId}.json`)
+    getOneQuery = (query, type) => this.app.get(`/products.json?${type}=${query}`)
+    getTwoQueries = (firstQuery, firstType, secondQuery, secondType) => this.app.get(`/products.json?${firstType}=${firstQuery}&${secondType}=${secondQuery}`)
 }
 
 export default ProductsService

@@ -1,6 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <h1 align="center">Atída challenge</h1>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`]. This project was developed as part of a selection process as part of a job application.
 
-## Getting Started
+## Install
+
+```sh
+npm install
+```
+
+## Usage
 
 First, run the development server:
 
@@ -12,23 +19,40 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Endpoints Server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The project is using the Makeup API [http://makeup-api.herokuapp.com/](http://makeup-api.herokuapp.com/) and the endpoints used in this projects are the followings:
 
-## Learn More
+|  Method        | Path                 | Description |
+| :------------- | :-----               |:------------|
+|  Get           | http://makeup-api.herokuapp.com/api/v1/products.json                   | Get all products       |
+|  Get           |   http://makeup-api.herokuapp.com/api/v1/products/:productId.json          | Get a product with its ID     |
+|   Get          | http://makeup-api.herokuapp.com/api/v1/products.json?:queryType=:query     | Make a query with a specific parameter and data (see API documentation)    |
+|   Get          | http://makeup-api.herokuapp.com/api/v1/products.json?:firstQueryType=:firstQuery&:secondQueryType=:secondQuery     | Make a query with 2 parameters and datas (see API documentation)    |
 
-To learn more about Next.js, take a look at the following resources:
+## Endpoints Client
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project use the home page as the product listing and each product can be accessed through its id.
+| Path                 | Description |
+| :-----               |:------------|
+| /                   | Home page with the product listing |
+|   /:productId         | Product page |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Libraries
 
-## Deploy on Vercel
+This project was developed with the help of the following libraries:
+* Axios
+* Bootstrap
+* FontAwesome
+* React Paginate
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
+**Anthony Guido**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Github: [@anthonyguidomadrid](https://github.com/anthonyguidomadrid/)
+- LinkedIn: [@anthony-guido](https://www.linkedin.com/in/anthony-guido/)
+
+## License
+
+Copyright © 2021 [Anthony Guido](https://github.com/anthonyguidomadrid/).

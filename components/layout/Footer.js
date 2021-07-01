@@ -1,5 +1,5 @@
 import styles from './Footer.module.css'
-import logo from './logo.jpg'
+import logo from './logo-white.jpg'
 import Image from 'next/image'
 
 const Footer = () => {

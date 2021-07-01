@@ -5,6 +5,7 @@ import ProductsService from '../../pages/api/products.service'
 import { Container, Row, Col, Spinner, Carousel, Form } from 'react-bootstrap'
 
 const productService = new ProductsService()
+const testMessage = `<h1>Hello</h1>`
 
 const ProductDetails = () => {
 
@@ -13,18 +14,19 @@ const ProductDetails = () => {
     const [color, setColor] = useState('Please select a color')
 
     useEffect(() => {
-        updateProduct()
+        router && router.query.productId? updateProduct() : router.push('/')
     }, [] )
 
     const updateProduct = () => {
-        if (!router.query.productId) {<Spinner animation="grow" className='spinner'/> } else {
             const productId = router.query.productId
             productService
                 .getOneProduct(productId)
                 .then(response => setProduct(response.data))
-                .catch(err => console.log(err))
-        }
-        
+                .catch(err => console.log(err))   
+    }
+
+    const addDefaultSrc = (ev) => {
+        ev.target.src = 'https://media.prdn.nl/retailtrends/files/Logo-Atida.jpg?w=850'
     }
 
     return (
@@ -38,6 +40,7 @@ const ProductDetails = () => {
                             className="d-block w-100"
                             src={product.api_featured_image}
                             alt={product.name}
+                            onError={addDefaultSrc}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
@@ -45,13 +48,14 @@ const ProductDetails = () => {
                             className="d-block w-100"
                             src={product.image_link}
                             alt={product.name}
+                            onError={addDefaultSrc}
                             />
                         </Carousel.Item>
                         </Carousel>
                 </Col>
                 <Col md={6}>
                     <h1 className={styles.productH1}>{product.name}</h1>
-                    <p className={styles.productDescription}>{product.description}</p>
+                    <p dangerouslySetInnerHTML={{__html: product.description}} className={styles.productDescription}></p>
                     <p><b>{product.price_sign?product.price_sign:'$'} {Number(product.price).toFixed(2)}</b></p>
                     <p>Selected color: {color}</p>
                     {product.product_colors.map(elm => 
