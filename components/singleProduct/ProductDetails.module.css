@@ -13,3 +13,11 @@
 .productDescription {
     font-weight: 200;
 }
+
+.colorPicker {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 2px;
+}
