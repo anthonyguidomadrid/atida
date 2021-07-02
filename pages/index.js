@@ -1,7 +1,7 @@
-import ProductsList from '../components/allProducts/ProductsList'
+import ProductsListingIndex from '../components/productListing/ProductsListingIndex'
 
 export default function Home() {
   return (
-    <ProductsList/>
+    <ProductsListingIndex/>
   )
 }

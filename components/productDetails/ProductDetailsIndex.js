@@ -1,17 +1,15 @@
-import styles from './ProductDetails.module.css'
 import React, { useState, useEffect } from "react"
 import { useRouter } from 'next/router'
 import ProductsService from '../../pages/api/products.service'
-import { Container, Row, Col, Spinner, Carousel, Form } from 'react-bootstrap'
+import { Container, Row, Col, Spinner, Carousel} from 'react-bootstrap'
+import ProductDescription from './ProductDescription'
 
 const productService = new ProductsService()
-const testMessage = `<h1>Hello</h1>`
 
-const ProductDetails = () => {
+const ProductDetailsIndex = () => {
 
     const router = useRouter()
     const [product, setProduct] = useState()
-    const [color, setColor] = useState('Please select a color')
 
     useEffect(() => {
         router && router.query.productId? updateProduct() : router.push('/')
@@ -54,20 +52,11 @@ const ProductDetails = () => {
                         </Carousel>
                 </Col>
                 <Col md={6}>
-                    <h1 className={styles.productH1}>{product.name}</h1>
-                    <p dangerouslySetInnerHTML={{__html: product.description}} className={styles.productDescription}></p>
-                    <p><b>{product.price_sign?product.price_sign:'$'} {Number(product.price).toFixed(2)}</b></p>
-                    <p>Selected color: {color}</p>
-                    {product.product_colors.map(elm => 
-                                <button className={styles.colorPicker} style={{backgroundColor: elm.hex_value}} onClick={() => setColor(elm.colour_name)}></button>
-
-                    )}
-                    <hr></hr>
-                    <p><i>Tags: {product.tag_list.join(', ')}</i></p>
+                    <ProductDescription product={product}/>
                 </Col>
             </Row>
         </Container>
     )
 }
 
-export default ProductDetails
+export default ProductDetailsIndex
