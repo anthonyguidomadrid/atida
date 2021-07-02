@@ -3,7 +3,7 @@ import axios from 'axios'
 class ProductsService {
     constructor() {
         this.app = axios.create({
-            baseURL: 'http://makeup-api.herokuapp.com/api/v1'
+            baseURL: 'https://makeup-api.herokuapp.com/api/v1'
         })
     }
     getAllProducts = () => this.app.get('/products.json')

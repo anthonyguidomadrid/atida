@@ -60,6 +60,10 @@ This project was developed with the help of the following libraries:
 <figcaption>Product Detail Page</figcaption>
 </figure>
 
+## Deploy
+
+This application can be seen online on this link: [https://atida.vercel.app/](https://atida.vercel.app/)
+
 ## Author
 
 **Anthony Guido**
