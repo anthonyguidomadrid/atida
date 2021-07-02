@@ -32,7 +32,7 @@ const ProductCard = ({id, api_featured_image, name, rating, price, price_sign}) 
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
                 <p>{stars(rating)}</p>
-                <Link href={link}>More information ></Link>
+                <Link href={link}>More information &gt;</Link>
                 <hr></hr>
                 <p><b>{price_sign?price_sign:'$'} {renderPrice}</b> / Unit</p>
                 </Card.Text>                    
