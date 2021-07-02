@@ -12,7 +12,7 @@ const ProductDescription = ({product}) => {
             <p><b>{product.price_sign?product.price_sign:'$'} {Number(product.price).toFixed(2)}</b></p>
             <p>Selected color: {color}</p>
             {product.product_colors.map(elm => 
-                        <button className={styles.colorPicker} style={{backgroundColor: elm.hex_value}} onClick={() => setColor(elm.colour_name)}></button>
+                        <button key={elm.colour_name} className={styles.colorPicker} style={{backgroundColor: elm.hex_value}} onClick={() => setColor(elm.colour_name)}></button>
 
             )}
             <hr></hr>

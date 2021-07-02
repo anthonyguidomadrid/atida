@@ -23,7 +23,7 @@ const SearchDropdown = ({arr, filterProductsDropdown}) => {
         <Form onSubmit={e => handleSubmit(e)}>
             <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Control id={value} as="select" value={value} onChange={e => handleInputChange(e)}>
-                {arr.map(elm => <option id={elm}>{elm}</option>)}
+                {arr.map(elm => <option key={elm} id={elm}>{elm}</option>)}
                 </Form.Control>
             </Form.Group>
             <Button variant="dark" type="submit">
