@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useRouter } from 'next/router'
 import ProductsService from '../../pages/api/products.service'
-import { Container, Row, Col, Spinner, Carousel} from 'react-bootstrap'
+import { Container, Row, Col, Spinner} from 'react-bootstrap'
+import ProductCarousel from './ProductCarousel'
 import ProductDescription from './ProductDescription'
 
 const productService = new ProductsService()
@@ -23,33 +24,33 @@ const ProductDetailsIndex = () => {
                 .catch(err => console.log(err))   
     }
 
-    const addDefaultSrc = (ev) => {
-        ev.target.src = 'https://media.prdn.nl/retailtrends/files/Logo-Atida.jpg?w=850'
-    }
-
     return (
         !product? <Spinner animation="grow" className='spinner'/> : 
         <Container>
             <Row>
                 <Col md={6}>
-                    <Carousel fade>
+                    <ProductCarousel img1={product.api_featured_image} img2={product.image_link} alt={product.name}/>
+                    {/* <Carousel fade>
                         <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={product.api_featured_image}
+                        {console.log(product.api_featured_image)}
+                            <Image
+                            layout='fill'
+                            src= 'https://i.stack.imgur.com/YHoSq.png'
+                            // {product.api_featured_image}
                             alt={product.name}
                             onError={addDefaultSrc}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={product.image_link}
+                            <Image
+                            layout='fill'
+                            src= 'https://i.stack.imgur.com/YHoSq.png'
+                            // {product.image_link}
                             alt={product.name}
                             onError={addDefaultSrc}
                             />
                         </Carousel.Item>
-                        </Carousel>
+                        </Carousel> */}
                 </Col>
                 <Col md={6}>
                     <ProductDescription product={product}/>

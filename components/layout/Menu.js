@@ -6,7 +6,7 @@ import logo from './logo.jpg'
 const Menu = () => {
     return (
     <Navbar className={styles.menu} bg="light" expand="lg">
-    <Navbar.Brand href="#home"><Image src={logo} alt='restaurant logo'/></Navbar.Brand>
+    <Navbar.Brand href="/"><Image src={logo} alt='restaurant logo'/></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
