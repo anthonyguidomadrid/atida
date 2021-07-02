@@ -23,11 +23,11 @@ const SearchRange = ({filterProductsRange, name, maximum, icon}) => {
 
     return(
         <Form onSubmit={e => handleSubmit(e)}>
-            <Form.Group controlId="maxValue">
+            <Form.Group>
                 <Form.Label>Maximum {name}: {max}{icon}</Form.Label>
                 <Form.Control type="range" min="0" max={maximum} onChange={e => handleChangeMax(e)} value={max}/>
             </Form.Group>
-            <Form.Group controlId="minValue">
+            <Form.Group>
                 <Form.Label>Minimum {name}: {min}{icon}</Form.Label>
                 <Form.Control type="range" min="0" max={maximum} onChange={e => handleChangeMin(e)} value={min}/>
             </Form.Group>
