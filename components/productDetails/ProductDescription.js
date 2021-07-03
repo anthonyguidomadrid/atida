@@ -7,7 +7,7 @@ const ProductDescription = ({product}) => {
 
     return (
         <>
-            <h1 className={styles.productH1}>{product.name}</h1>
+            <h1 dangerouslySetInnerHTML={{__html: product.name}} className={styles.productH1}></h1>
             <p dangerouslySetInnerHTML={{__html: product.description}} className={styles.productDescription}></p>
             <p><b>{product.price_sign?product.price_sign:'$'} {Number(product.price).toFixed(2)}</b></p>
             <p>Selected color: {color}</p>

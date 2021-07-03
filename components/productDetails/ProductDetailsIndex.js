@@ -30,27 +30,6 @@ const ProductDetailsIndex = () => {
             <Row>
                 <Col md={6}>
                     <ProductCarousel img1={product.api_featured_image} img2={product.image_link} alt={product.name}/>
-                    {/* <Carousel fade>
-                        <Carousel.Item>
-                        {console.log(product.api_featured_image)}
-                            <Image
-                            layout='fill'
-                            src= 'https://i.stack.imgur.com/YHoSq.png'
-                            // {product.api_featured_image}
-                            alt={product.name}
-                            onError={addDefaultSrc}
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Image
-                            layout='fill'
-                            src= 'https://i.stack.imgur.com/YHoSq.png'
-                            // {product.image_link}
-                            alt={product.name}
-                            onError={addDefaultSrc}
-                            />
-                        </Carousel.Item>
-                        </Carousel> */}
                 </Col>
                 <Col md={6}>
                     <ProductDescription product={product}/>

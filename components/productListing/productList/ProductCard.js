@@ -29,7 +29,7 @@ const ProductCard = ({id, api_featured_image, name, rating, price, price_sign}) 
             <Card className={styles.productCard}>
             <Card.Img variant="top" src={api_featured_image} />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title dangerouslySetInnerHTML={{__html: name}} ></Card.Title>
                 <Card.Text>
                 <p>{stars(rating)}</p>
                 <Link href={link}>More information &gt;</Link>

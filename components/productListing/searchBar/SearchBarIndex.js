@@ -1,9 +1,9 @@
 import styles from './SearchBar.module.css'
 import ProductsService from '../../../pages/api/products.service'
 import SearchBar from './SearchBar'
-import SearchType from './SearchDropdown'
+import SearchDropdown from './SearchDropdown'
 import SearchRange from './SearchRange'
-import { Button } from 'react-bootstrap'
+import { Spinner, Button } from 'react-bootstrap'
 
 const productService = new ProductsService()
 
@@ -49,13 +49,13 @@ const SearchBarIndex = ({products, productsCopy, setProducts}) => {
 
     return (
         <>
-            <h4>{products.length} Products found</h4>
+            {!products? <Spinner animation="grow"/> : <h4>{products.length} Products found</h4>}
             <p className={styles.searchTitle}>Search by keyword</p>
-            <SearchBar filterProductsBar={query => filterProductsBar(query)}/>
+            {!products? <input placeholder="Search" type="text" class="mr-sm-2 form-control" value="" disabled/> :<SearchBar filterProductsBar={query => filterProductsBar(query)}/>}
             <p className={styles.searchTitle}>Search by type</p>
-            <SearchType arr={typeArr} filterProductsDropdown={filterProductsDropdown}/>
+            <SearchDropdown arr={typeArr} filterProductsDropdown={filterProductsDropdown}/>
             <p className={styles.searchTitle}>Search by brand</p>
-            <SearchType arr={brandArr} filterProductsDropdown={filterProductsDropdown}/>
+            <SearchDropdown arr={brandArr} filterProductsDropdown={filterProductsDropdown}/>
             <p className={styles.searchTitle}>Search by price</p>
             <SearchRange filterProductsRange={filterProductsRange} name='price' maximum={80} icon='$'/>
             <p className={styles.searchTitle}>Search by rating</p>

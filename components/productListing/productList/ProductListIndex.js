@@ -2,7 +2,7 @@ import styles from './ProductListIndex.module.css'
 import React, { useState } from "react";
 import ProductCard from './ProductCard'
 import ReactPaginate from 'react-paginate'
-import { Row } from 'react-bootstrap'
+import { Row, Spinner } from 'react-bootstrap'
 
 const ProductListIndex = ({products}) => {
 
@@ -21,8 +21,8 @@ const ProductListIndex = ({products}) => {
             <h1>All our products</h1>
             <p>On this page you will find all our products.</p>
             <Row>
-            {displayProducts}
-            <ReactPaginate
+            {!products? <Spinner animation="grow" className='spinner'/> :displayProducts}
+            {products && <ReactPaginate
                 previousLabel={'Previous'}
                 nextLabel={'Next'}
                 pageCount={pageCount}
@@ -32,7 +32,7 @@ const ProductListIndex = ({products}) => {
                 nextLinkClassName={styles.nextBttn}
                 disabledClassName={styles.paginationDisabled}
                 activeClassName={styles.paginationActive}
-            />
+            />}
             </Row>
         </>
         )}

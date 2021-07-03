@@ -1,7 +1,7 @@
 import styles from './ProductsListing.module.css'
 import React, { useState, useEffect } from "react";
 import ProductsService from '../../pages/api/products.service'
-import { Container, Row, Col, Spinner } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import SearchBarIndex from './searchBar/SearchBarIndex'
 import ProductListIndex from './productList/ProductListIndex'
 
@@ -27,7 +27,6 @@ const ProductsListingIndex = () => {
     }
 
     return (
-        !products? <Spinner animation="grow" className='spinner'/> :
         <Container>
             <Row>
                 <Col md={3} className={styles.sideBar}>
