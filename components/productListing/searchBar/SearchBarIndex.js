@@ -51,7 +51,7 @@ const SearchBarIndex = ({products, productsCopy, setProducts}) => {
         <>
             {!products? <Spinner animation="grow"/> : <h4>{products.length} Products found</h4>}
             <p className={styles.searchTitle}>Search by keyword</p>
-            {!products? <input placeholder="Search" type="text" class="mr-sm-2 form-control" value="" disabled/> :<SearchBar filterProductsBar={query => filterProductsBar(query)}/>}
+            {!products? <input placeholder="Search" type="text" className="mr-sm-2 form-control" value="" disabled/> :<SearchBar filterProductsBar={query => filterProductsBar(query)}/>}
             <p className={styles.searchTitle}>Search by type</p>
             <SearchDropdown arr={typeArr} filterProductsDropdown={filterProductsDropdown}/>
             <p className={styles.searchTitle}>Search by brand</p>
