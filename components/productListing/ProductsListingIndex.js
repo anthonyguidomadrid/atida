@@ -1,5 +1,5 @@
 import styles from './ProductsListing.module.css'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import ProductsService from '../../pages/api/products.service'
 import { Container, Row, Col } from 'react-bootstrap'
 import SearchBarIndex from './searchBar/SearchBarIndex'

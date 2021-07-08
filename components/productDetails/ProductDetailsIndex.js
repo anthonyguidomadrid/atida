@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useRouter } from 'next/router'
 import ProductsService from '../../pages/api/products.service'
 import { Container, Row, Col, Spinner} from 'react-bootstrap'
-import ProductCarousel from './ProductCarousel'
-import ProductDescription from './ProductDescription'
+import ProductCarousel from './carousel/ProductCarouselIndex'
+import ProductDescription from './description/ProductDescriptionIndex'
 
 const productService = new ProductsService()
 

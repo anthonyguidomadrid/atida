@@ -10,7 +10,7 @@ import {
 
     
 
-const ProductCarousel = ({img1, img2, alt}) => {
+const ProductCarouselIndex = ({img1, img2, alt}) => {
   const items = [
     {
       src: 'http:'+ img1,
@@ -72,4 +72,4 @@ const ProductCarousel = ({img1, img2, alt}) => {
   );
 }
 
-export default ProductCarousel
+export default ProductCarouselIndex

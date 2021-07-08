@@ -1,8 +1,8 @@
-import styles from './Footer.module.css'
+import styles from './FooterIndex.module.css'
 import logo from './logo-white.jpg'
 import Image from 'next/image'
 
-const Footer = () => {
+const FooterIndex = () => {
     return (
         <div className={styles.footer}>
             <hr></hr>
@@ -14,4 +14,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default FooterIndex

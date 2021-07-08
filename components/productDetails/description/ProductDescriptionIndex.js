@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import styles from './ProductDescription.module.css'
+import styles from './ProductDescriptionIndex.module.css'
 
-const ProductDescription = ({product}) => {
+const ProductDescriptionIndex = ({product}) => {
 
     const [color, setColor] = useState('Please select a color')
 
@@ -21,4 +21,4 @@ const ProductDescription = ({product}) => {
     )
 }
 
-export default ProductDescription
+export default ProductDescriptionIndex

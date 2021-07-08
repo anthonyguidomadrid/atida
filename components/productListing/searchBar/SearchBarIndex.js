@@ -1,4 +1,4 @@
-import styles from './SearchBar.module.css'
+import styles from './SearchBarIndex.module.css'
 import ProductsService from '../../../pages/api/products.service'
 import SearchBar from './SearchBar'
 import SearchDropdown from './SearchDropdown'

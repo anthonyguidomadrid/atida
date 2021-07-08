@@ -1,9 +1,9 @@
 import { Nav, Navbar } from 'react-bootstrap'
-import styles from './Menu.module.css'
+import styles from './MenuIndex.module.css'
 import Image from 'next/image'
 import logo from './logo.jpg'
 
-const Menu = () => {
+const MenuIndex = () => {
     return (
     <Navbar className={styles.menu} bg="light" expand="lg">
     <Navbar.Brand href="/"><Image src={logo} alt='restaurant logo'/></Navbar.Brand>
@@ -17,4 +17,4 @@ const Menu = () => {
 )
 }
 
-export default Menu
+export default MenuIndex
